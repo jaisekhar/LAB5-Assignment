@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Location Tracker</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="bg">
+  <ion-item>
+    <ion-label floating>Enter your Email-ID</ion-label>
+    <ion-input type = "text" [(ngModel)]="LocUser.email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Enter your Password</ion-label>
+    <ion-input type = "password" [(ngModel)]="LocUser.password"></ion-input>
+  </ion-item>
+
+  <button ion-button (click)="UserLogin(LocUser)">Sign-In</button>
+  <button ion-button (click)="UserCreate(LocUser)">Register</button>
+
+
+</ion-content>

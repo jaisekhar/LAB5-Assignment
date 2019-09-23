@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Location Tracking
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding class="bg">
+
+  <form (ngSubmit)="LocationSubmit()">
+    <ion-list>
+      <button ion-button full round>Capture Location</button>
+    </ion-list>
+  </form>
+<div *ngIf="getGeoLocations != null">
+  <h3> Location History:</h3>
+  <div *ngFor="let locations of getGeoLocations" style="align-content: center">
+    <ion-list>
+      <ion-item>
+        {{locations.GeoLocTimestamp | date:'dd/MM/yyyy hh:mm:ss'}}
+&nbsp;
+        <a href="http://maps.google.com/maps?saddr={{locations.GeoLocLatitude}},{{locations.GeoLocLongitude}}">Get Directions</a>
+      </ion-item>
+    </ion-list>
+  </div>
+</div>
+</ion-content>
